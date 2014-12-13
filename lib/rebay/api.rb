@@ -9,7 +9,7 @@ module Rebay
     EBAY_US = 0
 
     class << self
-      attr_accessor :app_id, :default_site_id, :sandbox
+      attr_accessor :app_id, :default_site_id, :sandbox, :global_id
       
       def base_url
         [base_url_prefix,
@@ -31,6 +31,10 @@ module Rebay
       
       def default_site_id
         @default_site_id || EBAY_US
+      end
+    
+      def global_id
+        @global_id || 'EBAY-US'
       end
       
       def configure
